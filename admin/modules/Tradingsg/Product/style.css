@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+.linkPortalWrapper table th, .linkPortalWrapper table td {
+    border: 1px solid #efefef;
+    padding: 1.6px;
+    vertical-align: top;
+}

@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+@media all
+{
+    .m-tradingsg_dailyTrack .toggle {
+        display:block;
+    }
+
+    .m-tradingsg_dailyTrack .yform{
+        background-color: #fff;
+        border: 0;
+        padding: 0;
+    }
+
+    .m-tradingsg_dailyTrack .c50l,
+    .m-tradingsg_dailyTrack .c50r {
+        width: 100%;
+    }
+
+    .m-tradingsg_dailyTrack .ym-columnar .ym-fbox-text label,
+    .m-tradingsg_dailyTrack .ym-columnar .ym-fbox-select label,
+    .m-tradingsg_dailyTrack #frmEdit .type-text label,
+    .m-tradingsg_dailyTrack #frmEdit .type-select label {
+        width: 100%;
+    }
+
+    .m-tradingsg_dailyTrack #frmEdit .creModdate .type-text label{
+        width: 20%;
+    }
+   
+    .m-tradingsg_dailyTrack  .linkPortalWrapper div.header,
+    .m-tradingsg_dailyTrack  .linkPortalWrapper .linkPortalDataWrapper th{
+        background-color: #F8F8F8;
+    }
+
+    .yform.edit .type-text div.txt {
+        margin-left: 0% !important;
+    }
+    
+    a.addActualCharge,
+    a.addService,
+    a.addRenewalDate {
+        cursor: pointer;
+    }
+
+    select.lineItemClient {
+        width: 160px;
+    }
+}

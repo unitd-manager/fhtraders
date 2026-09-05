@@ -1,0 +1,7 @@
+AuthName "fhtraders.cubosale.in statistics"
+AuthType Basic
+AuthUserFile /home/fhtraders/.stats-htpasswd
+require valid-user
+<Files .stats-htpasswd>
+deny from all
+</Files>

@@ -1,0 +1,13 @@
+@media all
+{
+
+    .subTitles {
+    	display: none;
+    }
+
+    .totalValue{
+    	font-weight: bold;
+    }
+
+}
+
