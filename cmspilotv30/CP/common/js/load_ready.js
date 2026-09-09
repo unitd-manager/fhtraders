@@ -411,18 +411,40 @@ $(function() {
         //    filebrowserFlashUploadUrl: jssPath + 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
         //});
 
-        $(this).ckeditor(function() {
-        },
-        {
-            toolbar : toolbar,
-            bodyClass: 'cpCkEdiorBody',
-            filebrowserBrowseUrl : jssPath + 'ckfinder/ckfinder.html',
-            filebrowserImageBrowseUrl: jssPath + 'ckfinder/ckfinder.html?Type=Images',
-            filebrowserFlashBrowseUrl: jssPath + 'ckfinder/ckfinder.html?Type=Flash',
-            filebrowserUploadUrl: jssPath + 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-            filebrowserImageUploadUrl: jssPath + 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-            filebrowserFlashUploadUrl: jssPath + 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
-        })
+        // $(this).ckeditor(function() {
+        // },
+        // {
+        //     toolbar : toolbar,
+        //     bodyClass: 'cpCkEdiorBody',
+        //     filebrowserBrowseUrl : jssPath + 'ckfinder/ckfinder.html',
+        //     filebrowserImageBrowseUrl: jssPath + 'ckfinder/ckfinder.html?Type=Images',
+        //     filebrowserFlashBrowseUrl: jssPath + 'ckfinder/ckfinder.html?Type=Flash',
+        //     filebrowserUploadUrl: jssPath + 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+        //     filebrowserImageUploadUrl: jssPath + 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+        //     filebrowserFlashUploadUrl: jssPath + 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+        // })
+
+        CKEDITOR.replace(fldId, {
+    toolbar: toolbar,
+    bodyClass: 'cpCkEdiorBody',
+
+    filebrowserBrowseUrl: jssPath + 'ckfinder/ckfinder.html',
+
+    filebrowserImageBrowseUrl:
+        jssPath + 'ckfinder/ckfinder.html?Type=Images',
+
+    filebrowserFlashBrowseUrl:
+        jssPath + 'ckfinder/ckfinder.html?Type=Flash',
+
+    filebrowserUploadUrl:
+        jssPath + 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+
+    filebrowserImageUploadUrl:
+        jssPath + 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+
+    filebrowserFlashUploadUrl:
+        jssPath + 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+});
 
         //var editor = $(this).ckeditorGet();
         //if (includeStylesheet){
