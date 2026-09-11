@@ -110,6 +110,7 @@ $cpCfg['m.core.valuelist.recordTypeArr']     = array(
     ,'batchImportStatus' => 'Batch Import Status'
     ,'expenseSource'     => 'Expense Source'
     ,'staffPosition'     => 'Staff Position'
+    ,'supplierStatus' => 'Supplier Status'
 );
 
 $cpCfg['m.trading.product.quoteProductStatusArr'] = array (

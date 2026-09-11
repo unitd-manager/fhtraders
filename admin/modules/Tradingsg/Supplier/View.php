@@ -71,7 +71,7 @@ class CPL_Admin_Modules_Tradingsg_Supplier_View extends CP_Common_Lib_ModuleView
         $discountPercent = '';
         $cstNo = '';
         $tinNo = '';
-
+ 
         $sqlStatus   = $fn->getValueListSQL('supplierStatus');
         $sqlSupplier = $fn->getValueListSQL('supplierType');
         $sqlIndustry = $fn->getValueListSQL('companyIndustry');
@@ -100,7 +100,7 @@ class CPL_Admin_Modules_Tradingsg_Supplier_View extends CP_Common_Lib_ModuleView
 
         $text = "
         <div class='linkPortalWrapper'>
-            <div expanded='0' class='header'>
+            <div expanded='1' class='header'>
                 <div class='floatbox'>
                     <div class='float_left'>Supplier Details</div>
                     <div class='float_right'>Creation : {$row['created_by']} on {$creation_date} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Modified : {$row['modified_by']} {$modification_date}</div>

@@ -437,6 +437,8 @@ class CPL_Admin_Modules_Tradingsg_PurchaseOrder_Model extends CP_Common_Lib_Modu
         $db = Zend_Registry::get('db');
         $dbUtil = Zend_Registry::get('dbUtil');
         $validate = Zend_Registry::get('validate');
+        $cpCfg = Zend_Registry::get('cpCfg');
+        $cpSiteIdSession = $fn->getSessionParam('cp_site_id');
 
         if (!$this->getAddNewProductValidate()){
             return $validate->getErrorMessageXML();
@@ -467,6 +469,11 @@ class CPL_Admin_Modules_Tradingsg_PurchaseOrder_Model extends CP_Common_Lib_Modu
 
                 $fa1['published']  = 1;
                 $fa1['hsn']  = $hsn;
+             $fa1['item_code'] = $this->getUpdateProductCode();
+
+                if ($cpCfg['cp.hasMultiUniqueSites']) {
+                    $fa1['site_id'] = $cpSiteIdSession;
+                }
 
                 $insert1 = $dbUtil->getInsertSQLStringFromArray($fa1, 'product');
                 $result1 = $db->sql_query($insert1);
@@ -1585,22 +1592,32 @@ class CPL_Admin_Modules_Tradingsg_PurchaseOrder_Model extends CP_Common_Lib_Modu
     /**
      *
      */
-    function getUpdateProductCode() {
+   function getUpdateProductCode() {
         $fn = Zend_Registry::get('fn');
         $db = Zend_Registry::get('db');
 
         /* Updation of Product Code */
-        $nextProductItemCode = $fn->getSettingsValueByKey("nextProductCode");
-        $ProCode = $nextProductItemCode;
+        $nextProductItemCode = $fn->getSettingsValueByKey("nextProductItemCode");
 
-        //To update Product code
-        $SQLUpdate = "UPDATE setting SET value = (value+1) WHERE key_text = 'nextProductCode'";
-        $resultUpdate = $db->sql_query($SQLUpdate);
+        if($nextProductItemCode < 10){
+            $ProCode = $fn->getSettingsValueByKey('productCodePrefix') . '000' . $nextProductItemCode;
+        }
+        else if($nextProductItemCode < 99){
+            $ProCode = $fn->getSettingsValueByKey('productCodePrefix') . '00' . $nextProductItemCode;
+        }
+        else if($nextProductItemCode < 999){
+            $ProCode = $fn->getSettingsValueByKey('productCodePrefix') . '0' . $nextProductItemCode;
+        }
+        else{
+            $ProCode = $fn->getSettingsValueByKey('productCodePrefix') . $nextProductItemCode;
+        }
 
+        $SQL    = "UPDATE setting SET value = (value+1) WHERE key_text = 'nextProductItemCode'";
+        $result = $db->sql_query($SQL);
 
         return $ProCode;
     }
-    /**
+/**
      *
      */
 

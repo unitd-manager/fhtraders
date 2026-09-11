@@ -184,6 +184,7 @@ class CPL_Admin_Modules_Tradingsg_Supplier_Model extends CP_Common_Lib_ModuleMod
         $fa = $fn->addToFieldsArray($fa, 'notification_email');
         $fa = $fn->addToFieldsArray($fa, 'email');
         $fa = $fn->addToFieldsArray($fa, 'gst_no');
+        $fa = $fn->addToFieldsArray($fa, 'contact_phone');
         
         return $fa;
     }
