@@ -96,7 +96,7 @@ class CPL_Admin_Modules_Tradingsg_Supplier_View extends CP_Common_Lib_ModuleView
             "Medicine"
             ,"Lab"
         );
-
+ 
 
         $text = "
         <div class='linkPortalWrapper'>
